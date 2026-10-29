@@ -1,0 +1,286 @@
+
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Python & DS Practicals</title>
+<style>
+body{margin:0;background:#0d1117;color:#e6edf3;font:16px system-ui}
+header{padding:22px;background:#161b22;border-bottom:1px solid #30363d}
+h1{margin:0 0 6px}p{color:#9da7b3;margin:0}
+.layout{max-width:1100px;margin:auto;padding:16px;display:grid;grid-template-columns:260px 1fr;gap:16px}
+aside,main{background:#161b22;border:1px solid #30363d;border-radius:12px;overflow:hidden}
+input{width:85%;margin:12px;padding:10px;background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:8px}
+.list{max-height:70vh;overflow:auto;padding:8px}
+.list button{display:block;width:100%;text-align:left;padding:10px;background:transparent;border:0;color:#e6edf3;border-radius:7px;font:inherit}
+.list button:hover,.list button.on{background:#263244}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:12px;gap:8px}
+button.action{background:#263244;color:#e6edf3;border:1px solid #46556b;border-radius:7px;padding:8px}
+article{padding:16px}
+pre{background:#090d12;padding:14px;border-radius:8px;overflow:auto;max-height:68vh}
+code{font:13px/1.5 monospace}
+.note{padding:12px;color:#9da7b3;font-size:13px}
+@media(max-width:700px){.layout{grid-template-columns:1fr}.list{max-height:28vh}}
+</style>
+<header><h1>Python & DS Practicals</h1><p>Your practical revision library</p></header>
+<div class="layout">
+<aside><input id="q" placeholder="Search programs…"><nav class="list" id="list"></nav></aside>
+<main>
+<div class="bar"><span id="count"></span><button class="action" id="copy">Copy code</button></div>
+<article id="view"></article>
+<div class="note">Data Structures programs will be added later. Follow your college's rules for using online references during assessments.</div>
+</main></div>
+<script>
+const programs = [
+["01 Name, Age & Even/Odd",`from datetime import date
+
+name = input("Enter name: ")
+age = int(input("Enter age: "))
+year = date.today().year + (100 - age)
+print(name, "you will be 100 in", year)
+
+number = int(input("Enter a number: "))
+if number % 2 == 0:
+    print("The number is even.")
+else:
+    print("The number is odd.")`],
+["02 Arithmetic Operations",`a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+op = input("Enter operator (+, -, *, /, //, **): ")
+
+if op == "+":
+    print(a + b)
+elif op == "-":
+    print(a - b)
+elif op == "*":
+    print(a * b)
+elif op == "**":
+    print(a ** b)
+elif op == "/":
+    print("Cannot divide by zero" if b == 0 else a / b)
+elif op == "//":
+    print("Cannot divide by zero" if b == 0 else a // b)
+else:
+    print("Invalid operator")`],
+["03 Swap Two Values",`a = input("Enter first value: ")
+b = input("Enter second value: ")
+print("Before:", a, b)
+a, b = b, a
+print("After:", a, b)`],
+["04 Expression & Square Root",`a, b, c, d, e = 512, 282, 47, 48, 5
+print((a - b) / (c * d + e))
+
+n = float(input("Enter a non-negative number: "))
+if n >= 0:
+    print("Square root:", n ** 0.5)
+else:
+    print("Invalid number")`],
+["05 Fibonacci Series",`n = int(input("Enter length: "))
+a, b = 0, 1
+for i in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+print()`],
+["06 Reverse a Number",`n = int(input("Enter number: "))
+sign = -1 if n < 0 else 1
+n = abs(n)
+rev = 0
+while n > 0:
+    digit = n % 10
+    rev = rev * 10 + digit
+    n //= 10
+print(sign * rev)`],
+["07 Recursive Factorial",`def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+n = int(input("Enter non-negative integer: "))
+if n < 0:
+    print("Invalid number")
+else:
+    print("Factorial:", factorial(n))`],
+["08 Armstrong Number",`def is_armstrong(n):
+    digits = str(n)
+    power = len(digits)
+    total = sum(int(d) ** power for d in digits)
+    return n >= 0 and total == n
+
+n = int(input("Enter number: "))
+if is_armstrong(n):
+    print("Armstrong number")
+else:
+    print("Not an Armstrong number")`],
+["09 Palindrome",`text = input("Enter text or number: ")
+if text == text[::-1]:
+    print("Palindrome")
+else:
+    print("Not a palindrome")`],
+["10 Check Vowel",`def check_vowel(char):
+    return len(char) == 1 and char.lower() in "aeiou"
+
+char = input("Enter one character: ")
+print(check_vowel(char))`],
+["11 Length of String/List",`def length(value):
+    return len(value)
+
+text = input("Enter a string: ")
+print("Length =", length(text))
+print(length([10, 20, 30]))`],
+["12 Histogram",`def histogram(values):
+    for value in values:
+        print("*" * value)
+
+histogram([4, 9, 7])`],
+["13 Pangram",`def is_pangram(sentence):
+    alphabet = set("abcdefghijklmnopqrstuvwxyz")
+    return alphabet.issubset(set(sentence.lower()))
+
+text = input("Enter a sentence: ")
+print("Pangram" if is_pangram(text) else "Not a pangram")`],
+["14 List Elements Less Than 5",`values = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+result = [x for x in values if x < 5]
+print(result)`],
+["15 Common Member in Two Lists",`def checklist(l1, l2):
+    return any(item in l2 for item in l1)
+
+l1 = [1, 2, 3, 5]
+l2 = [5, 3, 6, 8]
+print(checklist(l1, l2))`],
+["16 Remove Selected Indices",`values = [1, 2, 3, 4, 5, 6, 7, 8]
+remove = {0, 2, 4, 5}
+result = [v for i, v in enumerate(values) if i not in remove]
+print("Original:", values)
+print("Modified:", result)`],
+["17 Copy a List",`list1 = [10, 20, 30, 40]
+list2 = list1.copy()
+print("Original:", list1)
+print("Copied:", list2)`],
+["18 Sort Dictionary by Value",`d = {"a": 3, "b": 1, "c": 2}
+print("Ascending:", dict(sorted(d.items(), key=lambda x: x[1])))
+print("Descending:", dict(sorted(d.items(), key=lambda x: x[1], reverse=True)))`],
+["19 Concatenate Dictionaries",`d1 = {1: 10, 2: 20}
+d2 = {3: 30, 4: 40}
+d3 = {5: 50, 6: 60}
+result = {**d1, **d2, **d3}
+print(result)`],
+["20 Sum Dictionary Values",`d = {"a": 100, "b": 200, "c": 300}
+total_sum = sum(d.values())
+print("Sum:", total_sum)`],
+["21 Student Class",`class Student:
+    def __init__(self, name, roll_no, course, marks):
+        self.name = name
+        self.roll_no = roll_no
+        self.course = course
+        self.marks = marks
+
+    def display(self):
+        print("Name:", self.name)
+        print("Roll No:", self.roll_no)
+        print("Course:", self.course)
+        print("Marks:", self.marks)
+
+s = Student("Abhishek", 10, "CS", 86)
+s.display()`],
+["22 Inheritance",`class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def display_name(self):
+        print("Name:", self.name)
+
+class Student(Person):
+    def __init__(self, name, roll_no):
+        super().__init__(name)
+        self.roll_no = roll_no
+
+    def display(self):
+        self.display_name()
+        print("Roll No:", self.roll_no)
+
+s = Student("Aadi", 10)
+s.display()`],
+["23 Numbers Class & Property",`class Numbers:
+    MULTIPLIER = 5
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def add(self):
+        return self.x + self.y
+
+    @classmethod
+    def multiply(cls, a):
+        return a * cls.MULTIPLIER
+
+    @staticmethod
+    def subtract(b, c):
+        return b - c
+
+    @property
+    def value(self):
+        return (self.x, self.y)
+
+    @value.setter
+    def value(self, values):
+        self.x, self.y = values
+
+    @value.deleter
+    def value(self):
+        self.x, self.y = None, None
+
+n = Numbers(10, 20)
+print(n.add())
+print(Numbers.multiply(3))
+print(Numbers.subtract(50, 30))
+print(n.value)
+n.value = (100, 200)
+print(n.value)
+del n.value
+print(n.value)`]
+];
+
+const list = document.querySelector("#list");
+const q = document.querySelector("#q");
+const view = document.querySelector("#view");
+const count = document.querySelector("#count");
+let selected = 0;
+
+function esc(s) {
+  return s.replace(/[&<>"']/g, c => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;",
+    '"':"&quot;", "'":"&#39;"
+  }[c]));
+}
+function draw() {
+  const matches = programs.map((p,i)=>({p,i}))
+    .filter(x=>x.p.join(" ").toLowerCase().includes(q.value.toLowerCase()));
+  list.innerHTML = "";
+  matches.forEach(x=>{
+    const b = document.createElement("button");
+    b.textContent = x.p[0];
+    if (x.i === selected) b.className = "on";
+    b.onclick = ()=>show(x.i);
+    list.appendChild(b);
+  });
+  count.textContent = matches.length + " / " + programs.length + " programs";
+  if (!matches.length) list.textContent = "No matches";
+}
+function show(i) {
+  selected = i;
+  view.innerHTML = "<h2>"+esc(programs[i][0])+"</h2><pre><code>"+esc(programs[i][1])+"</code></pre>";
+  draw();
+}
+q.oninput = draw;
+document.querySelector("#copy").onclick = async()=>{
+  try {
+    await navigator.clipboard.writeText(programs[selected][1]);
+    document.querySelector("#copy").textContent = "Copied!";
+  } catch(e) {
+    alert("Select the code and copy it manually.");
+  }
+};
+show(0);
+</script>
+</html>
