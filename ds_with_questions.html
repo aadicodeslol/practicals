@@ -1,0 +1,748 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DS Practicals | R</title>
+<style>
+:root{color-scheme:dark;--bg:#090b10;--panel:#121722;--panel2:#171e2b;--text:#edf1f7;--muted:#9ba8bb;--line:#273246;--accent:#a78bfa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:34px 18px 24px;background:linear-gradient(135deg,#17142b,#101a2b);border-bottom:1px solid var(--line)}.wrap{max-width:900px;margin:auto}
+.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.16em}h1{font-size:clamp(28px,6vw,44px);line-height:1.1;margin:9px 0}.sub,.note,footer{color:var(--muted)}
+main{max-width:900px;margin:24px auto;padding:0 14px 60px}input{width:100%;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);color:var(--text);font:inherit;outline:none}
+input:focus{border-color:var(--accent)}.note{font-size:13px;margin:12px 2px 20px}.practical{border:1px solid var(--line);border-radius:14px;background:var(--panel);margin:10px 0;overflow:hidden}
+.heading{width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;text-align:left;padding:17px 16px;background:transparent;border:0;color:var(--text);font:inherit;cursor:pointer}.heading span:first-child{font-weight:700}.chevron{color:var(--accent);font-size:20px}
+.content{display:none;border-top:1px solid var(--line);padding:14px}.practical.open .content{display:block}.question{padding:14px 0;border-bottom:1px solid var(--line)}.question:last-child{border-bottom:0}
+h3{font-size:15px;margin:0 0 7px;color:#d9ccff}.prompt{margin:0 0 12px;color:#d2d9e5}
+.codebar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px;color:var(--muted);font-size:11px;font-weight:800;letter-spacing:.1em}
+.copy{border:1px solid var(--line);border-radius:8px;background:var(--panel2);color:var(--text);padding:8px 11px;font-weight:650;cursor:pointer}pre{margin:0;padding:14px;border-radius:10px;background:#080b11;overflow:auto;white-space:pre;tab-size:2}
+code{font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;color:#d9e3f3}.empty{display:none;text-align:center;color:var(--muted);padding:30px}footer{text-align:center;font-size:12px;padding:22px}
+</style></head><body><header><div class="wrap"><div class="eyebrow">DATA STRUCTURES / STATISTICS · R</div><h1>DS Practicals</h1><p class="sub">13 practicals · Questions + R answers · Search and copy code</p></div></header>
+<main><input id="search" type="search" placeholder="Search questions or code…" autocomplete="off" aria-label="Search practicals">
+<p class="note">Question wording has been written from the practical titles and subtask labels in your uploaded notes. The R code is transcribed from the notes; apparent source errors have not been silently corrected.</p>
+<section class="practical" data-search="practical 1: frequency distribution q1. basic operations given the vector marks = c(34, 45, 67, 89, 56, 100), perform the basic operations: find its length, sort it in ascending and descending order, find the maximum and minimum, and calculate square root, exponential and logarithmic values. q2. creating a data frame create two variables using the given sequences, combine them into a data frame, and print the data frame.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 1: Frequency Distribution</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. basic operations given the vector marks = c(34, 45, 67, 89, 56, 100), perform the basic operations: find its length, sort it in ascending and descending order, find the maximum and minimum, and calculate square root, exponential and logarithmic values. 1. basic operations marks = c(34, 45, 67, 89, 56, 100)
+length(marks)
+sort(marks)
+sort(marks, decreasing = true)
+max(marks)
+min(marks)
+sqrt(marks)
+exp(marks)
+log(marks)">
+          <h3>Q1. Basic Operations</h3>
+          <p class="prompt">Given the vector marks = c(34, 45, 67, 89, 56, 100), perform the basic operations: find its length, sort it in ascending and descending order, find the maximum and minimum, and calculate square root, exponential and logarithmic values.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>marks = c(34, 45, 67, 89, 56, 100)
+length(marks)
+sort(marks)
+sort(marks, decreasing = TRUE)
+max(marks)
+min(marks)
+sqrt(marks)
+exp(marks)
+log(marks)</code></pre>
+        </article>
+        <article class="question" data-search="q2. creating a data frame create two variables using the given sequences, combine them into a data frame, and print the data frame. 2. creating a data frame(two variable) a = seq(55, 65)
+b= c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+t = data.frame(a, b)
+print(t)">
+          <h3>Q2. Creating a Data Frame</h3>
+          <p class="prompt">Create two variables using the given sequences, combine them into a data frame, and print the data frame.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>a = seq(55, 65)
+b= c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+t = data.frame(a, b)
+print(t)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 2: preparation of frequency distribution table q1. discrete frequency distribution using the given discrete data, prepare a frequency distribution table. calculate the frequency, relative frequency, percentage frequency and cumulative frequency. q2. continuous frequency distribution using the given observations, form class intervals of width 5 and prepare a continuous frequency distribution table with frequency, cumulative frequency, relative frequency and percentage frequency.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 2: Preparation of Frequency Distribution Table</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. discrete frequency distribution using the given discrete data, prepare a frequency distribution table. calculate the frequency, relative frequency, percentage frequency and cumulative frequency. 1. discrete frequency distribution a = c(1, 0, 3, 2, 1, 5, 6, 2, 2, 1, 0, 3, 4, 2, 1, 6, 3, 2, 1, 5, 3, 3, 2, 4, 2, 2, 3, 0, 
+2, 1, 4, 5, 3, 3, 4, 4, 1, 2, 4, 5)
+t = table(a)
+transform(a)
+f = c(3,8,10,8,6,4,2)
+n = sum(f)
+relative_frequency = f/n
+percentage_frequency = relative_frequency * 100
+y = cumsum(f)
+cbind(t, relative_frequency, y, percentage_frequency)">
+          <h3>Q1. Discrete Frequency Distribution</h3>
+          <p class="prompt">Using the given discrete data, prepare a frequency distribution table. Calculate the frequency, relative frequency, percentage frequency and cumulative frequency.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>a = c(1, 0, 3, 2, 1, 5, 6, 2, 2, 1, 0, 3, 4, 2, 1, 6, 3, 2, 1, 5, 3, 3, 2, 4, 2, 2, 3, 0, 
+2, 1, 4, 5, 3, 3, 4, 4, 1, 2, 4, 5)
+t = table(a)
+transform(a)
+f = c(3,8,10,8,6,4,2)
+n = sum(f)
+relative_frequency = f/n
+percentage_frequency = relative_frequency * 100
+y = cumsum(f)
+cbind(t, relative_frequency, y, percentage_frequency)</code></pre>
+        </article>
+        <article class="question" data-search="q2. continuous frequency distribution using the given observations, form class intervals of width 5 and prepare a continuous frequency distribution table with frequency, cumulative frequency, relative frequency and percentage frequency. 2. continuous frequency distribution b = c(42, 62, 46, 54, 41, 37, 54, 44, 32, 45, 47, 50, 58, 49, 51, 42, 46, 37, 42, 39, 54, 
+      39, 51, 58, 47, 64, 43, 48, 49, 61, 40, 58, 49, 59, 57, 57, 34, 56, 38, 52, 46, 40, 63, 41, 
+      51, 41)
+max(b)
+min(b)
+interval = seq(30, 65, by = 5)
+o = cut(b, breaks = interval, right = false)
+f = table(o)
+transform(f)
+frequency = c(2,5,10,13,8,7,4)
+n = sum(frequency)
+relative_freq = frequency/ n
+percent_freq = relative_freq * 100
+cumulative_freq = cumsum(frequency)
+cbind(frequency, cumulative_freq, relative_freq, percent_freq)">
+          <h3>Q2. Continuous Frequency Distribution</h3>
+          <p class="prompt">Using the given observations, form class intervals of width 5 and prepare a continuous frequency distribution table with frequency, cumulative frequency, relative frequency and percentage frequency.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>b = c(42, 62, 46, 54, 41, 37, 54, 44, 32, 45, 47, 50, 58, 49, 51, 42, 46, 37, 42, 39, 54, 
+      39, 51, 58, 47, 64, 43, 48, 49, 61, 40, 58, 49, 59, 57, 57, 34, 56, 38, 52, 46, 40, 63, 41, 
+      51, 41)
+max(b)
+min(b)
+interval = seq(30, 65, by = 5)
+o = cut(b, breaks = interval, right = FALSE)
+f = table(o)
+transform(f)
+frequency = c(2,5,10,13,8,7,4)
+n = sum(frequency)
+Relative_Freq = frequency/ n
+Percent_Freq = Relative_Freq * 100
+Cumulative_Freq = cumsum(frequency)
+cbind(frequency, Cumulative_Freq, Relative_Freq, Percent_Freq)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 3: histogram and frequency polygon q1. histogram using the given class midpoints and frequencies, construct a histogram showing the life of tyres and its frequency. q2. frequency polygon using the given class midpoints and frequencies, draw a frequency polygon.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 3: Histogram and Frequency Polygon</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. histogram using the given class midpoints and frequencies, construct a histogram showing the life of tyres and its frequency. program x = seq(17.5, 47.5, 5)
+f = c(5, 8, 13, 20, 14, 6, 4)
+y = rep(x, f)
+hist(y, breaks = seq(15, 50, 5), xlab = &quot;life of tyres&quot;, ylab = &quot;frequency&quot;, main = 
+       &quot;histogram&quot;)">
+          <h3>Q1. Histogram</h3>
+          <p class="prompt">Using the given class midpoints and frequencies, construct a histogram showing the life of tyres and its frequency.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>x = seq(17.5, 47.5, 5)
+f = c(5, 8, 13, 20, 14, 6, 4)
+y = rep(x, f)
+hist(y, breaks = seq(15, 50, 5), xlab = &quot;Life of tyres&quot;, ylab = &quot;Frequency&quot;, main = 
+       &quot;Histogram&quot;)</code></pre>
+        </article>
+        <article class="question" data-search="q2. frequency polygon using the given class midpoints and frequencies, draw a frequency polygon. polygon curve x = seq(17.5, 47.5, 5)
+f = c(5, 8, 13, 20, 14, 6, 4)
+plot(x,f,&quot;l&quot;,xlab = &quot;life of tire&quot;, ylab=&quot;no of tire&quot;,main=&quot;curve&quot;)
+points(x,f, pch=20)">
+          <h3>Q2. Frequency Polygon</h3>
+          <p class="prompt">Using the given class midpoints and frequencies, draw a frequency polygon.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>x = seq(17.5, 47.5, 5)
+f = c(5, 8, 13, 20, 14, 6, 4)
+plot(x,f,&quot;l&quot;,xlab = &quot;life of tire&quot;, ylab=&quot;No of tire&quot;,main=&quot;Curve&quot;)
+points(x,f, pch=20)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 4: less than and greater than ogive q1. less than ogive using the given class marks and frequencies, calculate the cumulative frequencies and draw a less-than ogive. q2. greater than ogive using the given class marks and frequencies, calculate the greater-than cumulative frequencies and draw a greater-than ogive. q3. combined ogives plot the less-than and greater-than ogives on the same graph. q4. stem-and-leaf plot construct a stem-and-leaf plot for the given observations.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 4: Less Than and Greater Than Ogive</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. less than ogive using the given class marks and frequencies, calculate the cumulative frequencies and draw a less-than ogive. 1. less than ogive m = seq(15, 65, 10) ; w = 10
+f = c(12, 18, 27, 20, 17, 6)
+lb = m - w/2 ; ub = m + w/2
+f1 = c(f, 0)
+mcf = cumsum(f)
+plot(lb, mcf, &quot;l&quot;, xlabel = &quot;marks&quot;, ylabel = &quot;frequency&quot;, main = &quot;greater than ogive&quot;)
+points(lb, mcf, pch = 20)">
+          <h3>Q1. Less Than Ogive</h3>
+          <p class="prompt">Using the given class marks and frequencies, calculate the cumulative frequencies and draw a less-than ogive.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>m = seq(15, 65, 10) ; w = 10
+f = c(12, 18, 27, 20, 17, 6)
+lb = m - w/2 ; ub = m + w/2
+f1 = c(f, 0)
+mcf = cumsum(f)
+plot(lb, mcf, &quot;l&quot;, xlabel = &quot;marks&quot;, ylabel = &quot;frequency&quot;, main = &quot;greater than ogive&quot;)
+points(lb, mcf, pch = 20)</code></pre>
+        </article>
+        <article class="question" data-search="q2. greater than ogive using the given class marks and frequencies, calculate the greater-than cumulative frequencies and draw a greater-than ogive. 2. greater than ogive m = seq(15, 65, 10) ; w = 10
+f = c(12, 18, 27, 20, 17, 6)
+
+lb = m - w/2 ; ub = m + w/2
+f1 = c(f, 0)
+lb1 = c(lb,70) ; ub1 = c(10,ub)
+
+mcf = cumsum(f1)
+cf1 = c(rev(mcf))
+plot(lb1, cf1, &quot;l&quot;, xlabel = &quot;marks&quot;, ylabel = &quot;frequency&quot;, main = &quot;greater than ogive&quot;)
+
+points(lb1, cf1, pch = 20)">
+          <h3>Q2. Greater Than Ogive</h3>
+          <p class="prompt">Using the given class marks and frequencies, calculate the greater-than cumulative frequencies and draw a greater-than ogive.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>m = seq(15, 65, 10) ; w = 10
+f = c(12, 18, 27, 20, 17, 6)
+
+lb = m - w/2 ; ub = m + w/2
+f1 = c(f, 0)
+lb1 = c(lb,70) ; ub1 = c(10,ub)
+
+mcf = cumsum(f1)
+cf1 = c(rev(mcf))
+plot(lb1, cf1, &quot;l&quot;, xlabel = &quot;marks&quot;, ylabel = &quot;frequency&quot;, main = &quot;greater than ogive&quot;)
+
+points(lb1, cf1, pch = 20)</code></pre>
+        </article>
+        <article class="question" data-search="q3. combined ogives plot the less-than and greater-than ogives on the same graph. combined ogives m = seq(15, 65, 10) ; w = 10
+f = c(12, 18, 27, 20, 17, 6)
+
+lb = m - w/2 ; ub = m + w/2
+f1 = c(f, 0)
+lb1 = c(lb,70) ; ub1 = c(10,ub)
+mcf = cumsum(f1)
+cf1 = c(rev(mcf))
+plot(ub1, mcf, &quot;l&quot;, xlabel = &quot;marks&quot;, ylabel = &quot;frequency&quot;, main = &quot;greater than ogive&quot;)
+points(ub1, mcf, pch = 20)
+lines(lb1, cf1, &quot;l&quot;, xlabel = &quot;marks&quot;, ylabel = &quot;frequency&quot;, main = &quot;greater than ogive&quot;)
+
+points(lb1, cf1, pch = 20)">
+          <h3>Q3. Combined Ogives</h3>
+          <p class="prompt">Plot the less-than and greater-than ogives on the same graph.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>m = seq(15, 65, 10) ; w = 10
+f = c(12, 18, 27, 20, 17, 6)
+
+lb = m - w/2 ; ub = m + w/2
+f1 = c(f, 0)
+lb1 = c(lb,70) ; ub1 = c(10,ub)
+mcf = cumsum(f1)
+cf1 = c(rev(mcf))
+plot(ub1, mcf, &quot;l&quot;, xlabel = &quot;marks&quot;, ylabel = &quot;frequency&quot;, main = &quot;greater than ogive&quot;)
+points(ub1, mcf, pch = 20)
+lines(lb1, cf1, &quot;l&quot;, xlabel = &quot;marks&quot;, ylabel = &quot;frequency&quot;, main = &quot;greater than ogive&quot;)
+
+points(lb1, cf1, pch = 20)</code></pre>
+        </article>
+        <article class="question" data-search="q4. stem-and-leaf plot construct a stem-and-leaf plot for the given observations. stemleaf grapf b = c(42, 62, 46, 54, 41, 37, 54, 44, 32, 45, 47, 50, 58, 49, 51, 42, 46, 37, 42, 39, 54, 
+      39, 51, 58, 47, 64, 43, 48, 49, 61, 40, 58, 49, 59, 57, 57, 34, 56, 38, 52, 46, 40, 63, 41, 
+      51, 41)
+stem(b)">
+          <h3>Q4. Stem-and-Leaf Plot</h3>
+          <p class="prompt">Construct a stem-and-leaf plot for the given observations.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>b = c(42, 62, 46, 54, 41, 37, 54, 44, 32, 45, 47, 50, 58, 49, 51, 42, 46, 37, 42, 39, 54, 
+      39, 51, 58, 47, 64, 43, 48, 49, 61, 40, 58, 49, 59, 57, 57, 34, 56, 38, 52, 46, 40, 63, 41, 
+      51, 41)
+stem(b)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 5: arithmetic mean, median, mode, and percentiles q1. central tendency and percentiles for the given sales data, calculate the arithmetic mean, median, first quartile, third quartile, third decile and 42nd percentile. q2. central tendency for a frequency distribution for the given discrete frequency distribution, calculate the mean, median, mode and 75th percentile.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 5: Arithmetic Mean, Median, Mode, and Percentiles</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. central tendency and percentiles for the given sales data, calculate the arithmetic mean, median, first quartile, third quartile, third decile and 42nd percentile. 1. central tendency &amp; percentiles sales = c(120, 115, 130, 140, 180, 210, 180, 120, 130, 150, 100, 190, 210, 160, 150, 160, 
+190, 200, 170, 152)
+mean_= mean(sales)
+median = median(sales)
+q1 = quantile(sales, 0.25)
+q3 = quantile(sales, 0.75)
+d3 = quantile(sales, 0.30)
+p42 = quantile(sales, 0.42)">
+          <h3>Q1. Central Tendency and Percentiles</h3>
+          <p class="prompt">For the given sales data, calculate the arithmetic mean, median, first quartile, third quartile, third decile and 42nd percentile.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>sales = c(120, 115, 130, 140, 180, 210, 180, 120, 130, 150, 100, 190, 210, 160, 150, 160, 
+190, 200, 170, 152)
+mean_= mean(sales)
+median = median(sales)
+Q1 = quantile(sales, 0.25)
+Q3 = quantile(sales, 0.75)
+D3 = quantile(sales, 0.30)
+P42 = quantile(sales, 0.42)</code></pre>
+        </article>
+        <article class="question" data-search="q2. central tendency for a frequency distribution for the given discrete frequency distribution, calculate the mean, median, mode and 75th percentile. 2. central tendency (frequency distribution) x = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+f = c(7, 11, 10, 8, 7, 5, 4, 3, 2, 1)
+y = rep(x, f)
+mean = mean(y)
+median= median(y)
+c = which(f==max(f))
+mode = x[c]
+quantile(x,0.75)
+print(mod)">
+          <h3>Q2. Central Tendency for a Frequency Distribution</h3>
+          <p class="prompt">For the given discrete frequency distribution, calculate the mean, median, mode and 75th percentile.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>x = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+f = c(7, 11, 10, 8, 7, 5, 4, 3, 2, 1)
+y = rep(x, f)
+mean = mean(y)
+median= median(y)
+c = which(f==max(f))
+mode = x[c]
+quantile(x,0.75)
+print(mod)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 6: mean, median, mode for grouped data q1. mean, median and mode for grouped data for the given grouped frequency distribution, calculate the arithmetic mean, median and mode.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 6: Mean, Median, Mode for Grouped Data</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. mean, median and mode for grouped data for the given grouped frequency distribution, calculate the arithmetic mean, median and mode. program lb = seq(0, 70, 10)
+ub = seq(10, 80, 10)
+w = 10
+f = c(6, 8, 15, 24, 19, 14, 12, 7)
+n = sum(f)
+cf = cumsum(f)
+x = (lb+ub)/2
+mean = sum(f*x)/n
+mc = min(which(cf &gt;= n/2))
+median = lb[mc] + w*(n/2 - cf[mc-1])/f[mc]
+moc = which(f == max(f))
+d1 = f[moc] - f[moc-1]
+d2 = f[moc] + f[moc-1]
+mode = lb[moc] + (w+d1)/(d1+d2)
+cat(mean,median,mode)">
+          <h3>Q1. Mean, Median and Mode for Grouped Data</h3>
+          <p class="prompt">For the given grouped frequency distribution, calculate the arithmetic mean, median and mode.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>lb = seq(0, 70, 10)
+ub = seq(10, 80, 10)
+w = 10
+f = c(6, 8, 15, 24, 19, 14, 12, 7)
+n = sum(f)
+cf = cumsum(f)
+x = (lb+ub)/2
+mean = sum(f*x)/n
+mc = min(which(cf &gt;= n/2))
+median = lb[mc] + w*(n/2 - cf[mc-1])/f[mc]
+moc = which(f == max(f))
+d1 = f[moc] - f[moc-1]
+d2 = f[moc] + f[moc-1]
+mode = lb[moc] + (w+d1)/(d1+d2)
+cat(mean,median,mode)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 7: measures of dispersion (range &amp; quartile deviation) q1. range and quartile deviation for the given observations, calculate the range, coefficient of range, quartile deviation and coefficient of quartile deviation. q2. comparing variability for the two given data sets a and b, calculate and compare their coefficients of range. q3. quartiles for grouped data for the given grouped frequency distribution, calculate q1, q3 and quartile deviation.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 7: Measures of Dispersion (Range &amp; Quartile Deviation)</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. range and quartile deviation for the given observations, calculate the range, coefficient of range, quartile deviation and coefficient of quartile deviation. 1. range &amp; quartile deviation x = c(20, 15, 19, 17, 21, 16, 15, 22, 24, 12, 17, 12, 12, 16, 17, 19, 16, 13, 21, 10)
+range_val = max(x) - min(x)
+coeff_of_range = (max(x) - min(x)) / (max(x) + min(x))
+q1 = quantile(x, 0.25)
+q3 = quantile(x, 0.75)
+qd = (q3 - q1) / 2
+coeff_of_qd = (q3 - q1) / (q3 + q1)
+cat(range_val, coeff_of_range, qd, coeff_of_qd)">
+          <h3>Q1. Range and Quartile Deviation</h3>
+          <p class="prompt">For the given observations, calculate the range, coefficient of range, quartile deviation and coefficient of quartile deviation.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>x = c(20, 15, 19, 17, 21, 16, 15, 22, 24, 12, 17, 12, 12, 16, 17, 19, 16, 13, 21, 10)
+range_val = max(x) - min(x)
+coeff_of_range = (max(x) - min(x)) / (max(x) + min(x))
+q1 = quantile(x, 0.25)
+q3 = quantile(x, 0.75)
+qd = (q3 - q1) / 2
+coeff_of_qd = (q3 - q1) / (q3 + q1)
+cat(range_val, coeff_of_range, qd, coeff_of_qd)</code></pre>
+        </article>
+        <article class="question" data-search="q2. comparing variability for the two given data sets a and b, calculate and compare their coefficients of range. 2. comparing variability a = c(624, 602, 619, 654, 644)
+b = c(200, 210, 215, 240, 225)
+coeff_range_a = (max(a) - min(a)) / (max(a) + min(a))
+coeff_range_b = (max(b) - min(b)) / (max(b) + min(b))
+cat( coeff_range_a, coeff_range_b)">
+          <h3>Q2. Comparing Variability</h3>
+          <p class="prompt">For the two given data sets A and B, calculate and compare their coefficients of range.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>A = c(624, 602, 619, 654, 644)
+B = c(200, 210, 215, 240, 225)
+coeff_range_A = (max(A) - min(A)) / (max(A) + min(A))
+coeff_range_B = (max(B) - min(B)) / (max(B) + min(B))
+cat( coeff_range_A, coeff_range_B)</code></pre>
+        </article>
+        <article class="question" data-search="q3. quartiles for grouped data for the given grouped frequency distribution, calculate q1, q3 and quartile deviation. quantile(grouped data) lb = seq(0, 70, 10)
+ub = seq(10, 80, 10)
+w = 10
+f = c(6, 8, 15, 24, 19, 14, 12, 7)
+n = sum(f)
+cf = cumsum(f)
+q1c = min(which(cf &gt;= n/4))
+q1 = lb[q1c] + (w*(n/4) – cf[q1c -1])/ f[q1c]
+q3c = min(which( cf == 3*(n/4)))
+q3 = lb[q3c] + (w * (3(n/4) – cf[q3c-1])/ f[q3c])
+qd = (q3-q1)/2 
+cat(q1,q3,qd)">
+          <h3>Q3. Quartiles for Grouped Data</h3>
+          <p class="prompt">For the given grouped frequency distribution, calculate Q1, Q3 and quartile deviation.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>lb = seq(0, 70, 10)
+ub = seq(10, 80, 10)
+w = 10
+f = c(6, 8, 15, 24, 19, 14, 12, 7)
+n = sum(f)
+cf = cumsum(f)
+q1c = min(which(cf &gt;= n/4))
+q1 = lb[q1c] + (w*(n/4) – cf[q1c -1])/ f[q1c]
+q3c = min(which( cf == 3*(n/4)))
+q3 = lb[q3c] + (w * (3(n/4) – cf[q3c-1])/ f[q3c])
+qd = (q3-q1)/2 
+cat(q1,q3,qd)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 8: standard deviation and variance q1. standard deviation and variance for the given grouped frequency distribution, calculate the mean, variance and standard deviation. q2. coefficient of variation for the given grouped data, calculate the mean, standard deviation and coefficient of variation.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 8: Standard Deviation and Variance</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. standard deviation and variance for the given grouped frequency distribution, calculate the mean, variance and standard deviation. program lb = seq(0, 70, 10)
+ub = seq(10, 80, 10)
+f1 = c(8, 18, 25, 30, 32, 26, 14, 9)
+n = sum(f1)
+x = (lb + ub) / 2
+mean_val = sum(f1 * x) / n
+a = sum(f1 * x^2) 
+b = mean_val^2 
+variance_val = (a / n) - b 
+sd_val = sqrt(variance_val)
+cat(mean, variance_val, sd_val)">
+          <h3>Q1. Standard Deviation and Variance</h3>
+          <p class="prompt">For the given grouped frequency distribution, calculate the mean, variance and standard deviation.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>lb = seq(0, 70, 10)
+ub = seq(10, 80, 10)
+f1 = c(8, 18, 25, 30, 32, 26, 14, 9)
+n = sum(f1)
+x = (lb + ub) / 2
+mean_val = sum(f1 * x) / n
+a = sum(f1 * x^2) 
+b = mean_val^2 
+variance_val = (a / n) - b 
+sd_val = sqrt(variance_val)
+cat(mean, variance_val, sd_val)</code></pre>
+        </article>
+        <article class="question" data-search="q2. coefficient of variation for the given grouped data, calculate the mean, standard deviation and coefficient of variation. coffiecent of variance lb=seq(20,140,70)
+ub=seq(40,160,20)
+x=(lb+ub)/2
+f=c(8,11,15,24,16,14,12)
+n=sum(f)
+mean=sum(f*x)/n
+a=sum(f*x^2)
+b=mean^2
+variance=a/n-b
+sd=sqrt(variance)
+cv=(sd/mean)*100
+cat( cv)">
+          <h3>Q2. Coefficient of Variation</h3>
+          <p class="prompt">For the given grouped data, calculate the mean, standard deviation and coefficient of variation.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>lb=seq(20,140,70)
+ub=seq(40,160,20)
+x=(lb+ub)/2
+f=c(8,11,15,24,16,14,12)
+n=sum(f)
+mean=sum(f*x)/n
+a=sum(f*x^2)
+b=mean^2
+variance=a/n-b
+SD=sqrt(variance)
+cv=(SD/mean)*100
+cat( cv)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 9: karl pearson&#x27;s coefficient of skewness q1. karl pearson&#x27;s coefficient of skewness for the given discrete data, calculate karl pearson&#x27;s coefficient of skewness using the mean, median and standard deviation.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 9: Karl Pearson&#x27;s Coefficient of Skewness</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. karl pearson&#x27;s coefficient of skewness for the given discrete data, calculate karl pearson&#x27;s coefficient of skewness using the mean, median and standard deviation. discrete data x = c(182, 166, 176, 195, 145, 130, 157, 106, 198, 124, 199, 197, 128, 104, 94, 115, 128, 
+102, 105, 130)
+mean_x = mean(x)
+median_x = median(x)
+sd_x = sd(x)
+kp = 3 * (mean_x - median_x) / sd_x 
+cat( kp)">
+          <h3>Q1. Karl Pearson&#x27;s Coefficient of Skewness</h3>
+          <p class="prompt">For the given discrete data, calculate Karl Pearson&#x27;s coefficient of skewness using the mean, median and standard deviation.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>x = c(182, 166, 176, 195, 145, 130, 157, 106, 198, 124, 199, 197, 128, 104, 94, 115, 128, 
+102, 105, 130)
+mean_x = mean(x)
+median_x = median(x)
+sd_x = sd(x)
+KP = 3 * (mean_x - median_x) / sd_x 
+cat( KP)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 10: bowley&#x27;s skewness and kurtosis q1. bowley&#x27;s skewness for the given grouped frequency distribution, calculate q1, q2 and q3, then find bowley&#x27;s coefficient of skewness. q2. kurtosis for the given grouped frequency distribution, calculate the second and fourth central moments used in the notes and find the coefficient of kurtosis.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 10: Bowley&#x27;s Skewness and Kurtosis</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. bowley&#x27;s skewness for the given grouped frequency distribution, calculate q1, q2 and q3, then find bowley&#x27;s coefficient of skewness. bowley&#x27;s skewness lb = seq(10, 50, 10)
+ub = seq(20, 60, 10)
+w = 10
+f1 = c(12, 18, 24, 20, 6)
+n = sum(f1)
+f = cumsum(f1)
+
+q1c = min(which(cf &gt;= n/4))
+q1 = lb[q1c] + w * ((n/4 - f[q1c - 1]) / f1[q1c])
+print(q1)
+
+q3c = min(which(cf &gt;= 3 * n/4))
+q3 = lb[q3c] + w * ((3 * n/4 - f[q3c - 1]) / f1[q3c])
+print(q3)
+
+q2c = min(which(cf &gt;= n/2))
+q2 = lb[q2c] + w * ((n/2 - f[q2c - 1]) / f1[q2c])
+print(q2)
+
+bp = (q3 + q1 – (2 * q2)) / (q3 - q1)
+print(bp)">
+          <h3>Q1. Bowley&#x27;s Skewness</h3>
+          <p class="prompt">For the given grouped frequency distribution, calculate Q1, Q2 and Q3, then find Bowley&#x27;s coefficient of skewness.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>lb = seq(10, 50, 10)
+ub = seq(20, 60, 10)
+w = 10
+f1 = c(12, 18, 24, 20, 6)
+n = sum(f1)
+f = cumsum(f1)
+
+q1c = min(which(cf &gt;= n/4))
+q1 = lb[q1c] + w * ((n/4 - f[q1c - 1]) / f1[q1c])
+print(q1)
+
+q3c = min(which(cf &gt;= 3 * n/4))
+q3 = lb[q3c] + w * ((3 * n/4 - f[q3c - 1]) / f1[q3c])
+print(q3)
+
+q2c = min(which(cf &gt;= n/2))
+q2 = lb[q2c] + w * ((n/2 - f[q2c - 1]) / f1[q2c])
+print(q2)
+
+Bp = (q3 + q1 – (2 * q2)) / (q3 - q1)
+print(Bp)</code></pre>
+        </article>
+        <article class="question" data-search="q2. kurtosis for the given grouped frequency distribution, calculate the second and fourth central moments used in the notes and find the coefficient of kurtosis. kurtosis lb = seq(400, 800, 100)
+ub = seq(500, 900, 100)
+w = 100
+f = c(8, 16, 20, 17, 3)
+n = sum(f)
+cf = cumsum(f)
+
+x = (lb + ub) / 2
+m2 = sum(f * x^2) / n
+m4 = sum(f * x^4) / n
+b = m4 / m2^2
+
+cat(q1, q2, q3, bp, b)">
+          <h3>Q2. Kurtosis</h3>
+          <p class="prompt">For the given grouped frequency distribution, calculate the second and fourth central moments used in the notes and find the coefficient of kurtosis.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>lb = seq(400, 800, 100)
+ub = seq(500, 900, 100)
+w = 100
+f = c(8, 16, 20, 17, 3)
+n = sum(f)
+cf = cumsum(f)
+
+x = (lb + ub) / 2
+m2 = sum(f * x^2) / n
+m4 = sum(f * x^4) / n
+b = m4 / m2^2
+
+cat(q1, q2, q3, Bp, b)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 11: scatter plot and correlation q1. scatter plot and correlation draw a scatter plot for the given paired observations and calculate the correlation coefficient.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 11: Scatter Plot and Correlation</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. scatter plot and correlation draw a scatter plot for the given paired observations and calculate the correlation coefficient. program x &lt;- c(45, 44, 48, 50, 53, 66, 30, 48)
+y &lt;- c(42, 40, 41, 42, 56, 30, 43, 40)
+plot(x, y, main = &quot;scatter plot&quot;, xlab = &quot;x-axis&quot;, ylab = &quot;y-axis&quot;)
+correlation_xy &lt;- cor(x, y)
+print(correlation_xy)">
+          <h3>Q1. Scatter Plot and Correlation</h3>
+          <p class="prompt">Draw a scatter plot for the given paired observations and calculate the correlation coefficient.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>x &lt;- c(45, 44, 48, 50, 53, 66, 30, 48)
+y &lt;- c(42, 40, 41, 42, 56, 30, 43, 40)
+plot(x, y, main = &quot;Scatter plot&quot;, xlab = &quot;x-axis&quot;, ylab = &quot;y-axis&quot;)
+correlation_xy &lt;- cor(x, y)
+print(correlation_xy)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 12: spearman&#x27;s rank correlation q1. spearman&#x27;s rank correlation using the given ranks, calculate spearman&#x27;s rank correlation coefficient. q2. spearman&#x27;s rank correlation with tied ranks for the given paired data containing tied values, assign ranks and calculate spearman&#x27;s rank correlation using the tie correction shown in the notes.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 12: Spearman&#x27;s Rank Correlation</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. spearman&#x27;s rank correlation using the given ranks, calculate spearman&#x27;s rank correlation coefficient. program rank_x &lt;- c(1, 3, 5, 7, 2, 4, 6)
+rank_y &lt;- c(2, 5, 4, 6, 1, 3, 7)
+n &lt;- length(rank_x)
+d &lt;- rank_x - rank_y
+d2 &lt;- sum(d^2)
+deno &lt;- n * (n^2 - 1)
+rho &lt;- 1 - ((6 * d2) / deno)
+cat(&quot;spearman rank correlation:&quot;, rho)">
+          <h3>Q1. Spearman&#x27;s Rank Correlation</h3>
+          <p class="prompt">Using the given ranks, calculate Spearman&#x27;s rank correlation coefficient.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>rank_x &lt;- c(1, 3, 5, 7, 2, 4, 6)
+rank_y &lt;- c(2, 5, 4, 6, 1, 3, 7)
+n &lt;- length(rank_x)
+d &lt;- rank_x - rank_y
+d2 &lt;- sum(d^2)
+deno &lt;- n * (n^2 - 1)
+rho &lt;- 1 - ((6 * d2) / deno)
+cat(&quot;Spearman Rank Correlation:&quot;, rho)</code></pre>
+        </article>
+        <article class="question" data-search="q2. spearman&#x27;s rank correlation with tied ranks for the given paired data containing tied values, assign ranks and calculate spearman&#x27;s rank correlation using the tie correction shown in the notes. if two rank are same : x = c(24, 29, 19, 14, 30, 19, 27, 30, 20, 28, 11)
+y = c(37, 35, 16, 26, 23, 27, 19, 20, 16, 11, 21)
+n = length (x)
+rankx = rank (-x)
+ranky = rank (-y)
+d = rankx - ranky
+d2 = sum(d^2)
+m = (2*(2^2-1))*3
+deno = n*(n^2-1)
+r = 1-((6*(d2 + (m/12))) / deno)
+cat (d2, m, deno, r)">
+          <h3>Q2. Spearman&#x27;s Rank Correlation with Tied Ranks</h3>
+          <p class="prompt">For the given paired data containing tied values, assign ranks and calculate Spearman&#x27;s rank correlation using the tie correction shown in the notes.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>x = c(24, 29, 19, 14, 30, 19, 27, 30, 20, 28, 11)
+y = c(37, 35, 16, 26, 23, 27, 19, 20, 16, 11, 21)
+n = length (x)
+rankx = rank (-x)
+ranky = rank (-y)
+d = rankx - ranky
+d2 = sum(d^2)
+m = (2*(2^2-1))*3
+deno = n*(n^2-1)
+r = 1-((6*(d2 + (m/12))) / deno)
+cat (d2, m, deno, r)</code></pre>
+        </article></div>
+    </section>
+<section class="practical" data-search="practical 13: regression lines q1. regression coefficients for the given x and y values, calculate the correlation coefficient and the two regression coefficients. q2. estimate y when x is given using the given means, variances, correlation coefficient and value of x, estimate y using the regression equation. q3. solve for the means and write regression lines solve the given simultaneous equations to obtain the means, then display the two regression lines using the coefficients supplied. q4. find the standard deviation of x using the given simultaneous equations, regression coefficients, correlation coefficient and standard deviation of y, calculate the standard deviation of x and write the regression lines.">
+      <button class="heading" aria-expanded="false" onclick="toggle(this)"><span>Practical 13: Regression Lines</span><span class="chevron">＋</span></button>
+      <div class="content">
+        <article class="question" data-search="q1. regression coefficients for the given x and y values, calculate the correlation coefficient and the two regression coefficients. 1. regression coefficients x &lt;- c(6, 2, 10, 4, 8)
+y &lt;- c(9, 11, 5, 8, 7)
+r &lt;- cor(x, y)
+sd_x &lt;- sd(x)
+sd_y &lt;- sd(y)
+byx &lt;- r * (sd_y / sd_x)
+bxy &lt;- r * (sd_x / sd_y)
+cat(r, byx, bxy)">
+          <h3>Q1. Regression Coefficients</h3>
+          <p class="prompt">For the given X and Y values, calculate the correlation coefficient and the two regression coefficients.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>x &lt;- c(6, 2, 10, 4, 8)
+y &lt;- c(9, 11, 5, 8, 7)
+r &lt;- cor(x, y)
+sd_x &lt;- sd(x)
+sd_y &lt;- sd(y)
+byx &lt;- r * (sd_y / sd_x)
+bxy &lt;- r * (sd_x / sd_y)
+cat(r, byx, bxy)</code></pre>
+        </article>
+        <article class="question" data-search="q2. estimate y when x is given using the given means, variances, correlation coefficient and value of x, estimate y using the regression equation. finding y if x  is given and vice versa xbar = 52.1
+ybar = 112.3
+var_x = 49
+var_y = 144
+r = -0.7
+x = 48
+sd_x = sqrt(var_x)
+sd_y = sqrt(var_y)
+byx = r * (sd_y / sd_x)
+y = byx * (x - xbar) + ybar
+cat(y)">
+          <h3>Q2. Estimate Y When X Is Given</h3>
+          <p class="prompt">Using the given means, variances, correlation coefficient and value of X, estimate Y using the regression equation.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>xbar = 52.1
+ybar = 112.3
+var_x = 49
+var_y = 144
+r = -0.7
+x = 48
+sd_x = sqrt(var_x)
+sd_y = sqrt(var_y)
+byx = r * (sd_y / sd_x)
+y = byx * (x - xbar) + ybar
+cat(y)</code></pre>
+        </article>
+        <article class="question" data-search="q3. solve for the means and write regression lines solve the given simultaneous equations to obtain the means, then display the two regression lines using the coefficients supplied. for solving equation a = matrix(c(2, -1, -3, 4), nrow = 2, byrow = true)
+b = c(15, 25)
+answer = solve(a, b)
+xbar = answer[1]
+ybar = answer[2]
+cat(&quot;xbar = &quot;, xbar, &quot;\n&quot;)
+cat(&quot;ybar = &quot;, ybar, &quot;\n&quot;)
+bxy = 1/2
+byx = 4/3
+cat(&quot;x - 17 = (1/2)(y - 19) \n&quot;)
+cat(&quot;y - 19 = (4/3)(x - 17) \n&quot;)">
+          <h3>Q3. Solve for the Means and Write Regression Lines</h3>
+          <p class="prompt">Solve the given simultaneous equations to obtain the means, then display the two regression lines using the coefficients supplied.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>A = matrix(c(2, -1, -3, 4), nrow = 2, byrow = TRUE)
+B = c(15, 25)
+answer = solve(A, B)
+xbar = answer[1]
+ybar = answer[2]
+cat(&quot;xbar = &quot;, xbar, &quot;\n&quot;)
+cat(&quot;ybar = &quot;, ybar, &quot;\n&quot;)
+bxy = 1/2
+byx = 4/3
+cat(&quot;x - 17 = (1/2)(y - 19) \n&quot;)
+cat(&quot;y - 19 = (4/3)(x - 17) \n&quot;)</code></pre>
+        </article>
+        <article class="question" data-search="q4. find the standard deviation of x using the given simultaneous equations, regression coefficients, correlation coefficient and standard deviation of y, calculate the standard deviation of x and write the regression lines. finding sigma y when ssigma x is given also if to find  x and y a = matrix(c(10, 3, 6, 5), nrow = 2, byrow = true)
+b = c(62, 50)
+answer = solve(a, b)
+xbar = answer[1]
+ybar = answer[2]
+
+cat(&quot;xbar = &quot;, xbar, &quot;\n&quot;)
+cat(&quot;ybar = &quot;, ybar, &quot;\n&quot;)
+
+bxy = -3/10
+byx = -6/5
+
+r = sqrt(bxy * byx)
+sigmay = 2
+
+cat(&quot;r = &quot;, r, &quot;\n&quot;)
+
+sigmax = (r * sigmay) / byx
+cat(&quot;sigma x = &quot;, sigmax, &quot;\n&quot;)
+
+cat(&quot;x - 5 = (-3/10)(y - 4) \n&quot;)
+cat(&quot;y - 4 = (-6/5)(x - 5) \n&quot;)">
+          <h3>Q4. Find the Standard Deviation of X</h3>
+          <p class="prompt">Using the given simultaneous equations, regression coefficients, correlation coefficient and standard deviation of Y, calculate the standard deviation of X and write the regression lines.</p>
+          <div class="codebar"><span>ANSWER / R CODE</span><button class="copy" onclick="copyCode(this)">Copy code</button></div>
+          <pre><code>A = matrix(c(10, 3, 6, 5), nrow = 2, byrow = TRUE)
+B = c(62, 50)
+answer = solve(A, B)
+xbar = answer[1]
+ybar = answer[2]
+
+cat(&quot;xbar = &quot;, xbar, &quot;\n&quot;)
+cat(&quot;ybar = &quot;, ybar, &quot;\n&quot;)
+
+bxy = -3/10
+byx = -6/5
+
+r = sqrt(bxy * byx)
+sigmay = 2
+
+cat(&quot;r = &quot;, r, &quot;\n&quot;)
+
+sigmax = (r * sigmay) / byx
+cat(&quot;Sigma x = &quot;, sigmax, &quot;\n&quot;)
+
+cat(&quot;x - 5 = (-3/10)(y - 4) \n&quot;)
+cat(&quot;y - 4 = (-6/5)(x - 5) \n&quot;)</code></pre>
+        </article></div>
+    </section>
+<div class="empty" id="empty">No matching questions found.</div><footer>Open a practical · Read the question · Copy the R code</footer></main>
+<script>
+function toggle(btn){const c=btn.closest('.practical');c.classList.toggle('open');btn.setAttribute('aria-expanded',c.classList.contains('open'));btn.querySelector('.chevron').textContent=c.classList.contains('open')?'－':'＋'}
+function copyCode(btn){const s=btn.closest('.question').querySelector('code').innerText;const done=()=>{const old=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>btn.textContent=old,1300)};if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(s).then(done).catch(()=>fallback(s,done))}else fallback(s,done)}
+function fallback(s,done){const a=document.createElement('textarea');a.value=s;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()}
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase().trim();let n=0;document.querySelectorAll('.practical').forEach(c=>{let visible=false;c.querySelectorAll('.question').forEach(qc=>{const show=qc.dataset.search.includes(q);qc.style.display=show?'':'none';if(show)visible=true});c.style.display=visible?'':'none';if(visible)n++});document.getElementById('empty').style.display=n?'none':'block'});
+</script></body></html>
